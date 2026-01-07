@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interests - Amirul Haziq</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #ff7e5f;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .interest-intro {
+            padding: 40px 30px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        
+        .intro-text {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        
+        .interests-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 30px;
+            background-color: #fff;
+        }
+        
+        .interest-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-top: 5px solid #3498db;
+        }
+        
+        .interest-card:nth-child(2) {
+            border-top-color: #e74c3c;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .interest-image {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .interest-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .interest-card:hover .interest-image img {
+            transform: scale(1.05);
+        }
+        
+        .interest-content {
+            padding: 25px;
+        }
+        
+        .interest-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .interest-icon {
+            color: #3498db;
+            font-size: 1.5rem;
+        }
+        
+        .interest-card:nth-child(2) .interest-icon {
+            color: #e74c3c;
+        }
+        
+        .interest-description {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        /* Music Player Styles - HTML5 Native */
+        .music-player-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .music-player-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .song-info {
+            text-align: center;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #6c757d;
+        }
+        
+        /* HTML5 Audio Player Styling */
+        .native-audio-player {
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .native-audio-player audio {
+            width: 100%;
+            height: 50px;
+        }
+        
+        /* Custom styling untuk audio element */
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            padding: 5px;
+        }
+        
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-mute-button {
+            background-color: #ff7e5f;
+            border-radius: 50%;
+        }
+        
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        audio::-webkit-media-controls-timeline {
+            background-color: #dee2e6;
+            border-radius: 5px;
+        }
+        
+        audio::-webkit-media-controls-volume-slider {
+            background-color: #dee2e6;
+            border-radius: 5px;
+        }
+        
+        .audio-instructions {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        
+        .audio-download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .audio-download:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        .benefits-section {
+            padding: 50px 30px;
+            background-color: #f1f8ff;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .conclusion-section {
+            padding: 50px 30px;
+            text-align: center;
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+        }
+        
+        .conclusion-text {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: #ff7e5f;
+            font-weight: bold;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-button:hover {
+            background: #e56b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .next-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .next-button:hover {
+            background: #e56b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #3498db, transparent);
+            margin: 40px auto;
+            width: 80%;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .interest-card {
+                min-width: 100%;
+            }
+            
+            .intro-text {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>My Interests</h1>
+            <p class="subtitle">Passions That Enrich My Life</p>
+            <p><i class="fas fa-heart"></i> Amirul Haziq bin Khalid</p>
+        </header>
+        
+        <section class="interest-intro">
+            <p class="intro-text">
+                Beyond my studies and daily routines, I have interests that bring joy, relaxation, and inspiration to my life. These passions help me maintain balance and find happiness in simple pleasures.
+            </p>
+        </section>
+        
+        <section class="interests-section">
+            <article class="interest-card">
+                <figure class="interest-image">
+                    <img src="images/selangor.jpg" alt="Football Match">
+                </figure>
+                <section class="interest-content">
+                    <h2 class="interest-title"><i class="fas fa-futbol interest-icon"></i> Watching Football Matches</h2>
+                    <p class="interest-description">
+                        One of my main interests is watching football, especially matches in the Malaysia Super League. My favorite team is Selangor FC, a club that is well known for its rich history, passionate supporters, and strong fighting spirit. I enjoy watching Selangor FC because they always show determination and teamwork on the field, regardless of the challenges they face.
+Following their matches helps me relax and brings me excitement, especially during intense and competitive games. Supporting Selangor FC has also taught me the importance of loyalty, discipline, and perseverance. Through football, I have learned that success comes from consistent effort and unity, values that I admire both in sports and in daily life
+                    </p>
+                    <p class="interest-description">
+                        Watching football helps me understand game strategies, appreciate teamwork, and feel the excitement of competition. It's not just entertainment - it's a learning experience about dedication and excellence.
+                    </p>
+                </section>
+            </article>
+            
+            <article class="interest-card">
+                <figure class="interest-image">
+                    <img src="images/slam.jpg" alt="90s Malay Music">
+                </figure>
+                <section class="interest-content">
+                    <h2 class="interest-title"><i class="fas fa-music interest-icon"></i> 90s Malay Sentimental Songs</h2>
+                    <p class="interest-description">
+                        I also have a great interest in 90s Malay sentimental songs. The captivating melodies and touching lyrics from the golden era of Malay music resonate deeply with me and bring back nostalgic feelings.
+                        Another interest of mine is listening to 1990s sentimental music, especially songs by legendary Malaysian bands such as Slam, Ukays, Spring, and Exists. I enjoy these songs because their lyrics are meaningful and emotional, often telling stories about love, heartbreak, and life experiences. The melodies are soothing and timeless, making the songs enjoyable to listen to even today. Listening to 90s jiwang songs helps me relax, reflect on my feelings, and appreciate the depth of classic Malaysian music.
+                    </p>
+                    
+                   
+                    <section class="music-player-container">
+                        <h3 class="music-player-title"><i class="fas fa-headphones"></i> Listen to 90s Sentimental Music</h3>
+                        <p class="song-info">"Gerimis Mengundang" by Slam</p>
+                        
+                        <!-- HTML5 Native Audio Player -->
+                        <div class="native-audio-player">
+                            
+                            <audio controls>
+                                <source src="music/song.mp3" type="audio/mpeg">
+                                <source src="song.mp3" type="audio/mpeg">
+                                <source src="Slam_-_Gerimis_Mengundang_(mp3.pm).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        
+                        <div class="audio-instructions">
+                            <p><strong>Cara penggunaan:</strong></p>
+                            <p>1. Click the play button(▶️) to start the song</p>
+                            <p>2. Use the speaker icon for volume control</p>
+                            
+                        </div>
+                        
+                        <!-- Download Link -->
+                       
+                        <a href="Slam_-_Gerimis_Mengundang_(mp3.pm).mp3" download class="audio-download">
+                            <i class="fas fa-download"></i> Download This Song (MP3 Format)
+                        </a>
+                    </section>
+                </section>
+            </article>
+        </section>
+        
+        <hr>
+        
+        <section class="benefits-section">
+            <h2 class="section-title">Benefits of My Interests</h2>
+            <article class="benefits-grid">
+                <section class="benefit-item">
+                    <i class="fas fa-brain benefit-icon"></i>
+                    <h3 class="benefit-title">Stress Relief</h3>
+                    <p class="interest-description">Engaging in my interests helps me unwind and reduces stress from daily academic pressures.</p>
+                </section>
+                
+                <section class="benefit-item">
+                    <i class="fas fa-users benefit-icon"></i>
+                    <h3 class="benefit-title">Social Connection</h3>
+                    <p class="interest-description">Shared interests help me bond with friends who enjoy similar activities and music.</p>
+                </section>
+                
+                <section class="benefit-item">
+                    <i class="fas fa-heart benefit-icon"></i>
+                    <h3 class="benefit-title">Emotional Well-being</h3>
+                    <p class="interest-description">Music and sports provide emotional outlets and contribute to overall mental health.</p>
+                </section>
+                
+                <section class="benefit-item">
+                    <i class="fas fa-balance-scale benefit-icon"></i>
+                    <h3 class="benefit-title">Life Balance</h3>
+                    <p class="interest-description">These interests help maintain a healthy balance between studies, work, and leisure.</p>
+                </section>
+            </article>
+        </section>
+        
+        <section class="conclusion-section">
+            <h2 class="section-title" style="color: white;">Balance in Life</h2>
+            <p class="conclusion-text">
+                My interests in <span class="highlight">football</span> and <span class="highlight">90s Malay music</span> are more than just hobbies - they're essential parts of who I am. They provide relaxation, inspiration, and a connection to both the present and the past.
+            </p>
+            <p class="conclusion-text">
+                Whether I'm cheering for my favorite team or listening to nostalgic melodies, these activities enrich my life and help me maintain a positive outlook amidst my academic journey.
+            </p>
+            <a href="hobbyy.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+                <a href="gallery.html" class="next-button">
+                <i class="fas fa-arrow-right"></i> Next
+            </a>
+            
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Amirul Haziq bin Khalid. All rights reserved.</p>
+            <p>Football Enthusiast • Music Lover • Balanced Life Advocate</p>
+        </footer>
+    </main>
+
+   
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Journey - Amirul Haziq</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #ff7e5f;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .education-intro {
+            padding: 40px 30px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        
+        .intro-text {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        
+        .education-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 30px;
+            background-color: #fff;
+        }
+        
+        .education-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-top: 5px solid #3498db;
+        }
+        
+        .education-card:nth-child(2) {
+            border-top-color: #2ecc71;
+        }
+        
+        .education-card:nth-child(3) {
+            border-top-color: #e74c3c;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .education-image {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .education-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .education-card:hover .education-image img {
+            transform: scale(1.05);
+        }
+        
+        .education-content {
+            padding: 25px;
+        }
+        
+        .education-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .education-icon {
+            color: #3498db;
+            font-size: 1.5rem;
+        }
+        
+        .education-card:nth-child(2) .education-icon {
+            color: #2ecc71;
+        }
+        
+        .education-card:nth-child(3) .education-icon {
+            color: #e74c3c;
+        }
+        
+        .education-description {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .education-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-tag {
+            background: #f1f8ff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            border: 1px solid #e1e8f0;
+        }
+        
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .map-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .achievements-section {
+            padding: 50px 30px;
+            background-color: #f1f8ff;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .achievement-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .journey-section {
+            padding: 50px 30px;
+            text-align: center;
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+        }
+        
+        .journey-text {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: #ff7e5f;
+            font-weight: bold;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-button:hover {
+            background: #e56b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .next-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .next-button:hover {
+            background: #e56b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #3498db, transparent);
+            margin: 40px auto;
+            width: 80%;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .education-card {
+                min-width: 100%;
+            }
+            
+            .intro-text {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>My Education Journey</h1>
+            <p class="subtitle">From Primary School to Higher Education</p>
+            <p><i class="fas fa-user-graduate"></i> Amirul Haziq bin Khalid</p>
+        </header>
+        
+        <section class="education-intro">
+            <p class="intro-text">
+                My educational journey has been a transformative experience, shaping me into who I am today. From my early years in primary school to my current diploma studies, each institution has played a crucial role in my personal and academic development.
+            </p>
+        </section>
+        
+        <section class="education-section">
+            <article class="education-card">
+                <figure class="education-image">
+                    <img src="images/sk batu kikir.jpg" alt="Sekolah Kebangsaan Batu Kikir">
+                </figure>
+                <section class="education-content">
+                    <h2 class="education-title"><i class="fas fa-school education-icon"></i> SK Batu Kikir</h2>
+                    <p class="education-description">
+                        My primary education foundation at Sekolah Kebangsaan Batu Kikir, where I built fundamental knowledge and developed essential life skills.
+                    </p>
+                    
+                    <div class="education-details">
+                        <span class="detail-tag">Primary School</span>
+                        <span class="detail-tag">2012-2017</span>
+                        <span class="detail-tag">Batu Kikir</span>
+                    </div>
+                    
+                    <a href="https://www.google.com.my/maps?client=safari&hs=ZW7o&sca_esv=7389a8dcd685bcae&hl=en-my&output=search&q=sk+batu+kikir&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIetxLMeWi1u_d0OMRvkClUba76WL62NDKV-tuv6_wPYBCwn1PrrOfPs6OFYogAUA80PX81cUYTwy1gx67ciraDm4-_TovFz2xZCKlY_AOsKLAYAWjbfrRTPnxJZDbLB77tDL_mtuttubNqAXLYw0DmhX4YyC3wC1kW3lW2A_lns0XK0fwGg&entry=mc&ved=1t:200715&ictx=111" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="map-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        View Location
+                    </a>
+                </section>
+            </article>
+            
+            <article class="education-card">
+                <figure class="education-image">
+                    <img src="images/smk batu kikir.jpg" alt="SMK Batu Kikir">
+                </figure>
+                <section class="education-content">
+                    <h2 class="education-title"><i class="fas fa-university education-icon"></i> SMK Batu Kikir</h2>
+                    <p class="education-description">
+                        Secondary education at SMK Batu Kikir where I explored various subjects and discovered my interests in both academic and co-curricular activities.
+                    </p>
+                    
+                    <div class="education-details">
+                        <span class="detail-tag">Secondary School</span>
+                        <span class="detail-tag">2018-2023</span>
+                        <span class="detail-tag">Batu Kikir</span>
+                    </div>
+                    
+                    <a href="https://www.google.com.my/maps?client=safari&hs=Erm9&sca_esv=7389a8dcd685bcae&hl=en-my&biw=375&bih=634&output=search&q=smk+batu+kikir&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIetxLMeWi1u_d0OMRvkClUba76WL62NDKV-tuv6_wPYBCwn1PrrOfPs6OFYogAUA80B4Yeha5pv5HQKE99i_gbVnsnUkyddP2JPGiNZgLq_zpBcEyVmYPATu8ijdR585bJMzyYoZ1Vm7t0UWrXUVaVQVb0wekJRv1CkDV27b5VWhnS-N_-w&entry=mc&ved=1t:200715&ictx=111" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="map-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        View Location
+                    </a>
+                </section>
+            </article>
+            
+            <article class="education-card">
+                <figure class="education-image">
+                    <img src="images/uitm rembau.jpg" alt="UiTM Rembau">
+                </figure>
+                <section class="education-content">
+                    <h2 class="education-title"><i class="fas fa-graduation-cap education-icon"></i> UiTM Rembau</h2>
+                    <p class="education-description">
+                        Currently pursuing a Diploma in Information Management at UiTM Rembau, gaining professional knowledge and skills for my future career.
+                    </p>
+                    
+                    <div class="education-details">
+                        <span class="detail-tag">Diploma</span>
+                        <span class="detail-tag">2023-Present</span>
+                        <span class="detail-tag">Information Management</span>
+                    </div>
+                    
+                    <a href="https://www.google.com.my/maps?client=safari&hs=Erm9&sca_esv=7389a8dcd685bcae&hl=en-my&biw=375&bih=634&output=search&q=uitm+rembau&source=lnms&fbs=AIIjpHyLQIRfE5m33x95tembRYSicGiQuLPu3saHMSBDNjSdcx051tqTR9GzNmvdrA3uWC0NTlwd3xTXaDBk6-EmMjCHWpKeBkycr_0NWdpbeMUrmMT2r86ePCQVdqhKYInuszErSwNaVfiP_kWWhogv93tgOyfj8n__P42i6aCsR3lsDLRG8fHNAhoL3nfwXZCBTAaUGFA5T8hEMcmh1qBO3zeoWt0VWg&entry=mc&ved=1t:200715&ictx=111" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="map-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        View Location
+                    </a>
+                </section>
+            </article>
+        </section>
+        
+        <hr>
+        
+        <section class="achievements-section">
+            <h2 class="section-title">Key Learnings & Achievements</h2>
+            <article class="achievements-grid">
+                <section class="achievement-item">
+                    <i class="fas fa-book-open achievement-icon"></i>
+                    <h3 class="achievement-title">Academic Foundation</h3>
+                    <p class="education-description">Built strong fundamentals in core subjects that prepared me for higher education challenges.</p>
+                </section>
+                
+                <section class="achievement-item">
+                    <i class="fas fa-users achievement-icon"></i>
+                    <h3 class="achievement-title">Leadership Skills</h3>
+                    <p class="education-description">Developed leadership abilities through various school programs and group projects.</p>
+                </section>
+                
+                <section class="achievement-item">
+                    <i class="fas fa-laptop-code achievement-icon"></i>
+                    <h3 class="achievement-title">Technical Expertise</h3>
+                    <p class="education-description">Gained practical skills in information management and digital technologies at UiTM.</p>
+                </section>
+                
+                <section class="achievement-item">
+                    <i class="fas fa-brain achievement-icon"></i>
+                    <h3 class="achievement-title">Critical Thinking</h3>
+                    <p class="education-description">Learned to analyze problems and develop effective solutions through various academic challenges.</p>
+                </section>
+            </article>
+        </section>
+        
+        <section class="journey-section">
+            <h2 class="section-title" style="color: white;">Educational Philosophy</h2>
+            <p class="journey-text">
+                Education for me is not just about <span class="highlight">passing exams</span> or earning certificates. It's about <span class="highlight">personal growth</span>, developing critical thinking skills, and preparing for real-world challenges.
+            </p>
+            <p class="journey-text">
+                Each stage of my educational journey has contributed to building my character, enhancing my knowledge, and shaping my perspective on life and future career aspirations.
+            </p>
+            <a href="biodata.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Biodata
+            </a>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Amirul Haziq bin Khalid. All rights reserved.</p>
+            <p>Lifelong Learner • Education Enthusiast</p>
+        </footer>
+    </main>
+
+</body>
+</html>
