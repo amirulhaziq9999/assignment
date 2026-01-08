@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirul Haziq - My Biodata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #5c5cac 0%, #5f79be 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, #b5e26d, #1e6b8a);
+            border-radius: 15px 15px 0 0;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .image-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .photo-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .photo-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 52, 96, 0.85);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #e94560;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #83ade0;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            color: #e94560;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        .highlight {
+            color: #e94560;
+            font-weight: bold;
+        }
+        
+        .education-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .education-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0f3460;
+        }
+        
+        .education-card h3 {
+            color: #3b82d8;
+            margin-bottom: 10px;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+            color: #e94560;
+            margin-right: 10px;
+        }
+         
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-button:hover {
+            background: #e56b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .next-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .next-button:hover {
+            background: #e56b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            background: linear-gradient(to right, #0f3460, #1a1a2e);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .footer p {
+            color: white;
+        }
+        
+        .social-icons {
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #e94560;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e94560, transparent);
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .photo-container {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Amirul Haziq bin Khalid</h1>
+            <p class="subtitle">Information Management Diploma Student</p>
+            <p><i class="fas fa-map-marker-alt icon"></i> Batu Kikir, Negeri Sembilan, Malaysia</p>
+        </header>
+        
+        <section class="image-section">
+            <figure class="photo-container">
+                <img src="images/amirul.jpg" alt="Amirul Haziq">
+                <figcaption class="photo-label">Amirul</figcaption>
+            </figure>
+            
+            <figure class="photo-container">
+                <img src="images/haziq.jpg" alt="Amirul Haziq">
+                <figcaption class="photo-label">Haziq</figcaption>
+            </figure>
+        </section>
+        
+        <section id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>My name is <span class="highlight">Amirul Haziq bin Khalid</span>, and I am <span class="highlight">20 years old</span>. I was born in <span class="highlight">Klang</span>, but since I was 10 years old, I have been living in <span class="highlight">Batu Kikir, Negeri Sembilan</span>.</p>
+            <p>Moving to a new place at a young age helped me learn to adapt and made me stronger. The peaceful environment, close-knit community, and slower pace of life have made me appreciate simple joys and develop strong values like respect, patience, and discipline.</p>
+        </section>
+        
+        <hr>
+        
+        <section id="passion">
+            <h2><i class="fas fa-futbol"></i> My Passion</h2>
+            <p>From a young age, I have a passion for <span class="highlight">football</span>. My dream is to become a <span class="highlight">professional football player</span>.</p>
+            <p>Football is more than just a game to me, it is a way to express myself and build strong friendships. I spend a lot of my free time playing football with my friends, whether it's in school, at the local field, or during community events. Playing football has taught me the importance of teamwork, dedication, and perseverance.</p>
+        </section>
+        
+        <hr>
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <p>Currently, I am in my last semester pursuing a diploma in <span class="highlight">Information Management</span> at <span class="highlight">UiTM Rembau, Negeri Sembilan</span>.</p>
+            <p>This program has been a significant part of my life over the past few years. It has not only equipped me with practical skills in managing information and technology but also taught me how to think critically and solve problems effectively.</p>
+            
+            <article class="education-details">
+                <section class="education-card">
+                    <h3><i class="fas fa-laptop-code icon"></i> Information Management</h3>
+                    <p>I have learned to work with data, understand information systems, and handle digital tools that are important in today's fast-paced world.</p>
+                </section>
+                
+                <section class="education-card">
+                    <h3><i class="fas fa-bullseye icon"></i> Skills Developed</h3>
+                    <p>Through my studies, I have gained discipline and time management skills. I have also grown more confident in communicating and working with others, thanks to group projects and presentations.</p>
+                </section>
+            </article>
+            
+            <p>Education for me is not just about passing exams or earning a diploma. It is a way to prepare myself for the challenges of the future and open doors to new opportunities.</p>
+            <p>The knowledge I am gaining at <span class="highlight">UiTM Rembau</span> is invaluable. It motivates me to aim higher and to keep learning even beyond formal education.</p>
+            <p>I believe that education is a lifelong journey, and what I learn today will help me succeed tomorrow, both in my career and in my personal life.</p>
+        </section>
+        
+        <hr>
+        
+        <section id="summary">
+            <h2><i class="fas fa-flag-checkered"></i> Looking Forward</h2>
+            <p>In summary, my educational journey is a key part of who I am. As I approach the completion of my diploma, I look forward to applying what I have learned to make a positive impact in the workplace and continuing developing myself.</p>
+            <p>Education has given me the tools to chase my dreams and build a better future, both in my professional football aspirations and in the field of information management.</p>
+        </section>
+        
+        <footer class="footer">
+            <p><i class="fas fa-quote-left icon"></i> The future belongs to those who believe in the beauty of their dreams <i class="fas fa-quote-right icon"></i></p>
+            <p>— Eleanor Roosevelt</p>
+            
+            <nav class="social-icons">
+                 <a href="https://www.instagram.com/ajiqkhld?igsh=MW00a2FmbWJic25oeQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+    <a href="familyy.html" class="next-button">
+                <i class="fas fa-arrow-right"></i> Next
+            </a>
+            </a>
+ 
+</nav>
+                
+            
+            <p style="margin-top: 20px; font-size: 0.9rem;">&copy; 2025 Amirul Haziq bin Khalid. All rights reserved.</p>
+        </footer>
+    </main>
+
+    
+     
+</body>
+</html>
